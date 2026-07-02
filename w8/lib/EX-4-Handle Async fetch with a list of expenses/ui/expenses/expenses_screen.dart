@@ -17,7 +17,7 @@ enum AsyncState { notstarted, loading, error, success }
 
 class _ExpensesScreenState extends State<ExpensesScreen> {
   AsyncState state = AsyncState.notstarted;
-  Expense? expense; // not null if fech succeed
+  List<Expense>? expense; // not null if fech succeed
   String? error; // not error if error
 
   void fetchExpense() async {
@@ -50,7 +50,10 @@ class _ExpensesScreenState extends State<ExpensesScreen> {
         return Text(error!, style: TextStyle(color: Colors.red));
 
       case AsyncState.success:
-        return ExpenseTile(expense: expense!);
+        return ListView.builder(
+          itemCount: expense!.length,
+          itemBuilder: (context, i) => ExpenseTile(expense: expense![i]),
+        );
     }
   }
 
