@@ -3,7 +3,7 @@ import '../models/expense.dart';
 class ExpenseRepository {
   List<Expense> expensesList = [
     Expense(amount: 45, title: "fake"),
-    Expense(amount: 19.99, title: "Flutter Course"),
+    Expense(amount: 19.99, title: "Burger Set"),
     Expense(amount: 15.69, title: "Cinema"),
     Expense(amount: 22.69, title: "Guitar"),
   ];
